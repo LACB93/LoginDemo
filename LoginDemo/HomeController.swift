@@ -17,6 +17,9 @@ class HomeController: UIViewController {
     }
      
     @IBAction func logoutUser(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "USUARIOREGISTRADO")
+        self.navigationController?.popToRootViewController(animated: true )
+        print("Sesión cerrada")
     }
     
     override func didReceiveMemoryWarning() {
