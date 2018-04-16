@@ -15,12 +15,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == true {
+            let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
+            self.navigationController?.pushViewController(Home, animated: false)
+        }
     }
 
     @IBAction func authenticateUser(_ sender: Any) {
+        let usrName = userName.text
         if userName.text == "gonet" && passwordField.text == "gonet" {
+            UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
             let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
             self.navigationController?.pushViewController(Home, animated: true)
+            print("Inicio de sesión de \(usrName!)")
         }
     }
     
