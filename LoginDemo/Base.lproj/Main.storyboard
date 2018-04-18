@@ -71,6 +71,12 @@
                                     <action selector="authenticateUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eo-Iv-QA8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSI-ho-ycC">
+                                <rect key="frame" x="20" y="161" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.52156862745098043" green="0.75686274509803919" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -79,18 +85,23 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eRj-XW-vz4" secondAttribute="trailing" constant="20" id="AC7-KU-l0M"/>
                             <constraint firstItem="c3j-BG-hm4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Fck-50-hLB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xVY-6e-jSN" secondAttribute="trailing" constant="20" id="J8S-rM-RoF"/>
+                            <constraint firstItem="JSI-ho-ycC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ncb-JQ-p98"/>
                             <constraint firstItem="eRj-XW-vz4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="P2j-tM-9Ce"/>
                             <constraint firstItem="eRj-XW-vz4" firstAttribute="top" secondItem="xVY-6e-jSN" secondAttribute="bottom" constant="20" id="aip-Jh-Oq1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i6V-TK-YLp" secondAttribute="trailing" constant="20" id="bKa-34-yrb"/>
                             <constraint firstItem="i6V-TK-YLp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="edv-Zt-fyB"/>
                             <constraint firstItem="xVY-6e-jSN" firstAttribute="top" secondItem="c3j-BG-hm4" secondAttribute="bottom" constant="60" id="mTj-ZQ-9UE"/>
                             <constraint firstItem="i6V-TK-YLp" firstAttribute="top" secondItem="eRj-XW-vz4" secondAttribute="bottom" constant="40" id="o3F-Nj-2ir"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JSI-ho-ycC" secondAttribute="trailing" constant="20" id="rWy-0Z-sRV"/>
+                            <constraint firstItem="xVY-6e-jSN" firstAttribute="top" secondItem="JSI-ho-ycC" secondAttribute="bottom" constant="31.5" id="rXP-Oa-KjD"/>
+                            <constraint firstItem="JSI-ho-ycC" firstAttribute="top" secondItem="c3j-BG-hm4" secondAttribute="bottom" constant="7.5" id="t32-Nu-RXb"/>
                             <constraint firstItem="xVY-6e-jSN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="v8L-6A-rDp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="68I-Se-IDG"/>
                     <connections>
+                        <outlet property="mensajeLabel" destination="JSI-ho-ycC" id="thn-bL-W8H"/>
                         <outlet property="passwordField" destination="eRj-XW-vz4" id="LWk-5P-e9b"/>
                         <outlet property="userName" destination="xVY-6e-jSN" id="fhF-RL-yNV"/>
                     </connections>
