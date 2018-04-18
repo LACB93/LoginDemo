@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!    
@@ -48,20 +50,30 @@ class ViewController: UIViewController {
     @IBAction func authenticateUser(_ sender: Any) {
         
         let usrName = userName.text
-        if userName.text == "gonet" && passwordField.text == "gonet" {
-            UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
-            let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
-            self.navigationController?.pushViewController(Home, animated: true)
-            print("Inicio de sesión de \(usrName!)")
-        }else{
-            self.mensajeLabel.text = "Credenciales Invalidas"
-            showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu usuario y contraseña")
+        
+        if self.userName.text == "" || self.passwordField.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else {
+            Auth.auth().signIn(withEmail: self.userName.text!, password: self.passwordField.text!) { (user, error) in
+                if error == nil {
+                    UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
+                    let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
+                    self.navigationController?.pushViewController(Home, animated: true)
+                    print("Inicio de sesión de \(usrName!)")
+                    
+                } else {
+                    self.mensajeLabel.text = "Credenciales Invalidas"
+                    self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu email y contraseña")
+                }
+            }
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
 
