@@ -11,6 +11,7 @@
 		697109A99D98F84C455E08DC /* Pods_LoginDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683F013800EA9018AF92EFE1 /* Pods_LoginDemo.framework */; };
 		B9286147D05133F60A00F8BF /* Pods_LoginDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C3EE26193A2D0BEC21E039 /* Pods_LoginDemoUITests.framework */; };
 		C00CDCBB2086B48700722F5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C00CDCBA2086B48700722F5B /* GoogleService-Info.plist */; };
+		C0A371AF208A69B000E97F5A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A371AE208A69B000E97F5A /* Users.swift */; };
 		C0E4956D20852183009A71F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E4956C20852183009A71F0 /* AppDelegate.swift */; };
 		C0E4956F20852183009A71F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E4956E20852183009A71F0 /* ViewController.swift */; };
 		C0E4957220852183009A71F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E4957020852183009A71F0 /* Main.storyboard */; };
@@ -49,6 +50,9 @@
 		BD3EB798C6F887080C6FFE96 /* Pods-LoginDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginDemoUITests/Pods-LoginDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C00CDCBA2086B48700722F5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C00CDCBC2086B69700722F5B /* LoginDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoginDemo.entitlements; sourceTree = "<group>"; };
+		C0A371A7208A5F3900E97F5A /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A371A8208A5F3900E97F5A /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A371AE208A69B000E97F5A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		C0E4956920852183009A71F0 /* LoginDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E4956C20852183009A71F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E4956E20852183009A71F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		AA2826FE098CF14A68FEAF15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0A371A7208A5F3900E97F5A /* Realm.framework */,
+				C0A371A8208A5F3900E97F5A /* RealmSwift.framework */,
 				683F013800EA9018AF92EFE1 /* Pods_LoginDemo.framework */,
 				0CBD43778331EF60DC35F023 /* Pods_LoginDemoTests.framework */,
 				68C3EE26193A2D0BEC21E039 /* Pods_LoginDemoUITests.framework */,
@@ -147,6 +153,7 @@
 				C0E4956E20852183009A71F0 /* ViewController.swift */,
 				C0E4959E20854352009A71F0 /* HomeController.swift */,
 				C0E4957020852183009A71F0 /* Main.storyboard */,
+				C0A371AE208A69B000E97F5A /* Users.swift */,
 				C0E4957320852183009A71F0 /* Assets.xcassets */,
 				C0E4957520852183009A71F0 /* LaunchScreen.storyboard */,
 				C0E4957820852183009A71F0 /* Info.plist */,
@@ -324,9 +331,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LoginDemoTests/Pods-LoginDemoTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -456,12 +468,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LoginDemo/Pods-LoginDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A371AF208A69B000E97F5A /* Users.swift in Sources */,
 				C0E4956F20852183009A71F0 /* ViewController.swift in Sources */,
 				C0E4956D20852183009A71F0 /* AppDelegate.swift in Sources */,
 				C0E4959F20854352009A71F0 /* HomeController.swift in Sources */,
