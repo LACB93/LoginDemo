@@ -9,6 +9,8 @@ target 'LoginDemo' do
   
   pod 'Firebase/Auth'
   
+  pod 'RealmSwift'
+  
 
 
   # Pods for LoginDemo
@@ -16,6 +18,7 @@ target 'LoginDemo' do
   target 'LoginDemoTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RealmSwift'
   end
 
   target 'LoginDemoUITests' do
