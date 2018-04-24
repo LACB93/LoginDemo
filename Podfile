@@ -11,6 +11,7 @@ target 'LoginDemo' do
   
   pod 'RealmSwift'
   
+  pod 'SwiftKeychainWrapper', '~> 3.0.1'
 
 
   # Pods for LoginDemo

@@ -10,39 +10,25 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import RealmSwift
+import SwiftKeychainWrapper
 
 class ViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!    
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var mensajeLabel: UILabel!
-    @IBOutlet weak var switchController: UISwitch!
     
     let realm = try! Realm()
     var usersList : Results<Users>!
     override func viewDidLoad() {
-        switchController.addTarget(self, action: #selector(self.rememberSwitch), for: .valueChanged)
-        if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == false {
-            userName.text = UserDefaults.standard.string(forKey: "savedUserName")
-            passwordField.text = UserDefaults.standard.string(forKey: "savedPassword")
-        }
         super.viewDidLoad()
+        let retrievedUser: String? = KeychainWrapper.standard.string(forKey: "userUser")
+        let retrievedPassword: String? = KeychainWrapper.standard.string(forKey: "userPassword")
+        userName.text = retrievedUser
+        passwordField.text = retrievedPassword
         usersList = realm.objects(Users.self)
         print(usersList)
-        if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == false {
-            switchController.setOn(true, animated: false)
-        }
-        else {
-            switchController.setOn(false, animated: false)
-        }
-        
-//        userName.text = UserDefaults.standard.string(forKey: "savedUserName")
-//        passwordField.text = UserDefaults.standard.string(forKey: "savedPassword")
-//        switchController.setOn(true, animated: false)
         if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == true {
             let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
             self.navigationController?.pushViewController(Home, animated: false)
-        }else {
-            switchController.setOn(false, animated: false)
         }
         
     }
@@ -51,22 +37,12 @@ class ViewController: UIViewController {
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let retry = UIAlertAction(title: "Intentar otra vez", style: .default) { (action) in
-            self.mensajeLabel.text = ""
             self.userName.text = ""
             self.passwordField.text = ""
             self.userName.becomeFirstResponder()
         }
         
-//        let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: {(action) in
-//
-//            self.mensajeLabel.text = ""
-//            self.userName.text = ""
-//            self.passwordField.text = ""
-//
-//        })
-        
         alert.addAction(retry)
-//        alert.addAction(cancelar)
         present(alert, animated: true, completion: nil)
     }
     
@@ -78,6 +54,7 @@ class ViewController: UIViewController {
         
         alerta.addTextField{ (contraseña) in
             contraseña.placeholder = "Contraseña"
+            contraseña.isSecureTextEntry = true
         }
         
         let save = UIAlertAction(title: "Guardar", style: .default) { (action) in
@@ -103,45 +80,63 @@ class ViewController: UIViewController {
         present(alerta, animated: true, completion: nil)
     }
     
-    @IBAction func rememberSwitch(_ switchState: UISwitch) {
-        if switchState.isOn{
-            UserDefaults.standard.set(true, forKey: "rememberme")
-            UserDefaults.standard.set(userName.text, forKey: "savedUserName")
-            UserDefaults.standard.set(passwordField.text, forKey: "savedPassword")
-        }else {
-            UserDefaults.standard.set(false, forKey: "USUARIOREGISTRADO")
-            }
+    func deleteDatabase() {
+        try! realm.write({
+            realm.deleteAll()
+        })
     }
     
     @IBAction func authenticateUser(_ sender: Any) {
-        
         let usrName = userName.text
-        
-        if self.userName.text == "" || self.passwordField.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)
+        let usuarios = usersList
+        for users in usuarios! {
+            let usr = users.usuario
+            let pw = users.contraseña
             
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            self.present(alertController, animated: true, completion: nil)
-            
-        } else {
-            Auth.auth().signIn(withEmail: self.userName.text!, password: self.passwordField.text!) { (user, error) in
-                if error == nil {
-                    UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
-                    let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
-                    self.navigationController?.pushViewController(Home, animated: true)
-                    print("--- Inicio de sesión de \(usrName!) ---")
-                    
-                } else {
-                    self.mensajeLabel.text = "Credenciales Invalidas"
-                    self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu email y contraseña")
-                }
-             }
+            if self.userName.text == usr && self.passwordField.text == pw {
+                UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
+                let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
+                self.navigationController?.pushViewController(Home, animated: true)
+                print("--- Inicio de sesión de \(usrName!) ---")
+            } else {
+                self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu usuario y contraseña")
+            }
         }
         
+//        if self.userName.text == "" || self.passwordField.text == "" {
+//            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)
+//
+//            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//            alertController.addAction(defaultAction)
+//
+//            self.present(alertController, animated: true, completion: nil)
+//
+//        } else {
+//            Auth.auth().signIn(withEmail: self.userName.text!, password: self.passwordField.text!) { (user, error) in
+//                if error == nil {
+//                    UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
+//                    let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
+//                    self.navigationController?.pushViewController(Home, animated: true)
+//                    print("--- Inicio de sesión de \(usrName!) ---")
+//
+//                } else {
+//                    self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu email y contraseña")
+//                }
+//             }
+        }
+    
+ 
+    @IBAction func savePasswordButton(_ sender: UIButton) {
+        if let user = userName.text, let password = passwordField.text{
+            let saveUser: Bool = KeychainWrapper.standard.set(user, forKey: "userUser")
+            let savePassword: Bool = KeychainWrapper.standard.set(password, forKey: "userPassword")
+            print("Save was successful: \(savePassword)")
+            self.view.endEditing(true)
+        }
+    }
+    
     }
 
 
-}
+
 
