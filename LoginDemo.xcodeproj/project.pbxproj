@@ -192,7 +192,6 @@
 				C0E4956620852183009A71F0 /* Frameworks */,
 				C0E4956720852183009A71F0 /* Resources */,
 				F96AB34C91B468ACFBEC9107 /* [CP] Embed Pods Frameworks */,
-				EF2AF4FB570436D5253F18A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,7 +211,6 @@
 				C0E4957A20852183009A71F0 /* Frameworks */,
 				C0E4957B20852183009A71F0 /* Resources */,
 				0312FDD00ECF4E88051F1C2A /* [CP] Embed Pods Frameworks */,
-				6B6767C5B3ED3394B1DE4874 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,8 +230,6 @@
 				C0E4958420852183009A71F0 /* Sources */,
 				C0E4958520852183009A71F0 /* Frameworks */,
 				C0E4958620852183009A71F0 /* Resources */,
-				0630037CE4598F55047ABD8D /* [CP] Embed Pods Frameworks */,
-				30CCAAA1CD6F2BE4FA6F5679 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,36 +341,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LoginDemoTests/Pods-LoginDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0630037CE4598F55047ABD8D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LoginDemoUITests/Pods-LoginDemoUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		30CCAAA1CD6F2BE4FA6F5679 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LoginDemoUITests/Pods-LoginDemoUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		42847EBE1FE06050453AB1BC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,36 +395,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6B6767C5B3ED3394B1DE4874 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LoginDemoTests/Pods-LoginDemoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF2AF4FB570436D5253F18A5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LoginDemo/Pods-LoginDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F96AB34C91B468ACFBEC9107 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -470,6 +406,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -478,6 +415,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
