@@ -20,10 +20,12 @@ class ViewController: UIViewController {
     var usersList : Results<Users>!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let retrievedUser: String? = KeychainWrapper.standard.string(forKey: "userUser")
-        let retrievedPassword: String? = KeychainWrapper.standard.string(forKey: "userPassword")
-        userName.text = retrievedUser
-        passwordField.text = retrievedPassword
+        if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == false {
+            let retrievedUser: String? = KeychainWrapper.standard.string(forKey: "userUser")
+            let retrievedPassword: String? = KeychainWrapper.standard.string(forKey: "userPassword")
+            userName.text = retrievedUser
+            passwordField.text = retrievedPassword
+        }
         usersList = realm.objects(Users.self)
         print(usersList)
         if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == true {
@@ -128,9 +130,9 @@ class ViewController: UIViewController {
  
     @IBAction func savePasswordButton(_ sender: UIButton) {
         if let user = userName.text, let password = passwordField.text{
-            let saveUser: Bool = KeychainWrapper.standard.set(user, forKey: "userUser")
-            let savePassword: Bool = KeychainWrapper.standard.set(password, forKey: "userPassword")
-            print("Save was successful: \(savePassword)")
+            let _: Bool = KeychainWrapper.standard.set(user, forKey: "userUser")
+            let _: Bool = KeychainWrapper.standard.set(password, forKey: "userPassword")
+            print("--- Credenciales guardadas ---")
             self.view.endEditing(true)
         }
     }
