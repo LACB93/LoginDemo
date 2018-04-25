@@ -94,7 +94,7 @@ class ViewController: UIViewController {
         for users in usuarios! {
             let usr = users.usuario
             let pw = users.contraseña
-            
+
             if self.userName.text == usr && self.passwordField.text == pw {
                 UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
                 let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
@@ -129,15 +129,23 @@ class ViewController: UIViewController {
     
  
     @IBAction func savePasswordButton(_ sender: UIButton) {
-        if let user = userName.text, let password = passwordField.text{
-            let _: Bool = KeychainWrapper.standard.set(user, forKey: "userUser")
-            let _: Bool = KeychainWrapper.standard.set(password, forKey: "userPassword")
-            print("--- Credenciales guardadas ---")
-            self.view.endEditing(true)
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+            if let user = userName.text, let password = passwordField.text{
+                let _: Bool = KeychainWrapper.standard.set(user, forKey: "userUser")
+                let _: Bool = KeychainWrapper.standard.set(password, forKey: "userPassword")
+                print("--- Credenciales guardadas ---")
+                self.view.endEditing(true)
+            }
+
         }
+        
     }
     
     }
+
 
 
 
