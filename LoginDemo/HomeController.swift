@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class HomeController: UIViewController {
 
@@ -20,6 +21,9 @@ class HomeController: UIViewController {
         UserDefaults.standard.set(false, forKey: "USUARIOREGISTRADO")
         self.navigationController?.popToRootViewController(animated: true )
         print("--- Sesión cerrada ---")
+        let _: String? = KeychainWrapper.standard.string(forKey: "userUser")
+        let _: String? = KeychainWrapper.standard.string(forKey: "userPassword")
+        
     }
     
     override func didReceiveMemoryWarning() {
