@@ -109,6 +109,16 @@ class ViewController: UIViewController {
             self.navigationController?.pushViewController(Home, animated: true)
         } else {
             self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu usuario y contraseña")
+        } ////
+        
+        if self.userName.text == "" || self.passwordField.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
         }
     }
     
@@ -118,8 +128,7 @@ class ViewController: UIViewController {
         for users in usuarios! {
             let usr = users.usuario
             let pw = users.contraseña
-            
-            
+     
             if self.userName.text == usr && self.passwordField.text == pw {
                 UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
                 let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
@@ -163,12 +172,9 @@ class ViewController: UIViewController {
                 print("--- Credenciales guardadas ---")
                 self.view.endEditing(true)
             }
-            
         }
-        
     }
-
-        }
+}
 
 
 
