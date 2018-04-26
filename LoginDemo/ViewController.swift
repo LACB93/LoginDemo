@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         print(usersList)
         if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == true {
             let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
-            self.navigationController?.pushViewController(Home, animated: false)
+            self.navigationController?.pushViewController(Home, animated: true)
         }
         
     }
@@ -91,19 +91,54 @@ class ViewController: UIViewController {
     @IBAction func authenticateUser(_ sender: Any) {
         let usrName = userName.text
         let usuarios = usersList
+        // Solo si encuentra un usuario valido, va a poder hacer login
+        var isLoginExitoso = false
         for users in usuarios! {
             let usr = users.usuario
             let pw = users.contraseña
+
+            if self.userName.text == usr && self.passwordField.text == pw {
+                UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
+                isLoginExitoso = true
+                break
+            }
+        }
+        if isLoginExitoso {
+            print("--- Inicio de sesión de \(usrName!) ---")
+            let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
+            self.navigationController?.pushViewController(Home, animated: true)
+        } else {
+            self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu usuario y contraseña")
+        } ////
+        
+        if self.userName.text == "" || self.passwordField.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)
             
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+    }
+    
+    /*@IBAction func authenticateUser(_ sender: Any) {
+        let usrName = userName.text
+        let usuarios = usersList
+        for users in usuarios! {
+            let usr = users.usuario
+            let pw = users.contraseña
+     
             if self.userName.text == usr && self.passwordField.text == pw {
                 UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
                 let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
-                self.navigationController?.pushViewController(Home, animated: true)
+               self.navigationController?.pushViewController(Home, animated: true)
                 print("--- Inicio de sesión de \(usrName!) ---")
             } else {
                 self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu usuario y contraseña")
             }
-        }
+            
+        }*/
         
 //        if self.userName.text == "" || self.passwordField.text == "" {
 //            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)
@@ -125,19 +160,21 @@ class ViewController: UIViewController {
 //                    self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu email y contraseña")
 //                }
 //             }
-        }
     
- 
     @IBAction func savePasswordButton(_ sender: UIButton) {
-        if let user = userName.text, let password = passwordField.text{
-            let _: Bool = KeychainWrapper.standard.set(user, forKey: "userUser")
-            let _: Bool = KeychainWrapper.standard.set(password, forKey: "userPassword")
-            print("--- Credenciales guardadas ---")
-            self.view.endEditing(true)
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+            if let user = userName.text, let password = passwordField.text{
+                let _: Bool = KeychainWrapper.standard.set(user, forKey: "userUser")
+                let _: Bool = KeychainWrapper.standard.set(password, forKey: "userPassword")
+                print("--- Credenciales guardadas ---")
+                self.view.endEditing(true)
+            }
         }
     }
-    
-    }
+}
 
 
 
