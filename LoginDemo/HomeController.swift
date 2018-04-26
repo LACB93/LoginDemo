@@ -9,7 +9,7 @@
 import UIKit
 import SwiftKeychainWrapper
 
-class HomeController: UIViewController {
+class HomeController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()

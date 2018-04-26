@@ -10,7 +10,7 @@
 		441FC5E8B50474CF7B96BAB9 /* Pods_LoginDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBD43778331EF60DC35F023 /* Pods_LoginDemoTests.framework */; };
 		697109A99D98F84C455E08DC /* Pods_LoginDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683F013800EA9018AF92EFE1 /* Pods_LoginDemo.framework */; };
 		B9286147D05133F60A00F8BF /* Pods_LoginDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C3EE26193A2D0BEC21E039 /* Pods_LoginDemoUITests.framework */; };
-		C00CDCBB2086B48700722F5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C00CDCBA2086B48700722F5B /* GoogleService-Info.plist */; };
+		C033ED692090E1F900C8A1D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C033ED682090E1F900C8A1D5 /* GoogleService-Info.plist */; };
 		C0A371AF208A69B000E97F5A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A371AE208A69B000E97F5A /* Users.swift */; };
 		C0E4956D20852183009A71F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E4956C20852183009A71F0 /* AppDelegate.swift */; };
 		C0E4956F20852183009A71F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E4956E20852183009A71F0 /* ViewController.swift */; };
@@ -48,8 +48,8 @@
 		81EB72B569D8862AE7CABC66 /* Pods-LoginDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoginDemoUITests/Pods-LoginDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8802A8AFD7331FF80C0F7541 /* Pods-LoginDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginDemo/Pods-LoginDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BD3EB798C6F887080C6FFE96 /* Pods-LoginDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginDemoUITests/Pods-LoginDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C00CDCBA2086B48700722F5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C00CDCBC2086B69700722F5B /* LoginDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoginDemo.entitlements; sourceTree = "<group>"; };
+		C033ED682090E1F900C8A1D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0A371A7208A5F3900E97F5A /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A371A8208A5F3900E97F5A /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A371AE208A69B000E97F5A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 				C0A371AE208A69B000E97F5A /* Users.swift */,
 				C0E4957320852183009A71F0 /* Assets.xcassets */,
 				C0E4957520852183009A71F0 /* LaunchScreen.storyboard */,
+				C033ED682090E1F900C8A1D5 /* GoogleService-Info.plist */,
 				C0E4957820852183009A71F0 /* Info.plist */,
-				C00CDCBA2086B48700722F5B /* GoogleService-Info.plist */,
 			);
 			path = LoginDemo;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E4957720852183009A71F0 /* LaunchScreen.storyboard in Resources */,
-				C00CDCBB2086B48700722F5B /* GoogleService-Info.plist in Resources */,
+				C033ED692090E1F900C8A1D5 /* GoogleService-Info.plist in Resources */,
 				C0E4957420852183009A71F0 /* Assets.xcassets in Resources */,
 				C0E4957220852183009A71F0 /* Main.storyboard in Resources */,
 			);
@@ -602,7 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LoginDemo/LoginDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PUXRA93KK6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lacb.users;
@@ -619,7 +619,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LoginDemo/LoginDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PUXRA93KK6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lacb.users;
