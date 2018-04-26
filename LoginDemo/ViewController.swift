@@ -20,17 +20,17 @@ class ViewController: UIViewController {
     var usersList : Results<Users>!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == false {
-            let retrievedUser: String? = KeychainWrapper.standard.string(forKey: "userUser")
-            let retrievedPassword: String? = KeychainWrapper.standard.string(forKey: "userPassword")
-            userName.text = retrievedUser
-            passwordField.text = retrievedPassword
-        }
         usersList = realm.objects(Users.self)
         print(usersList)
         if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == true {
             let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
             self.navigationController?.pushViewController(Home, animated: true)
+        } else {
+            let retrievedUser: String? = KeychainWrapper.standard.string(forKey: "userUser")
+            let retrievedPassword: String? = KeychainWrapper.standard.string(forKey: "userPassword")
+            userName.text = retrievedUser
+            passwordField.text = retrievedPassword
+
         }
         
     }
@@ -88,6 +88,8 @@ class ViewController: UIViewController {
         })
     }
     
+    // *** Autenticación con Realm ***
+    
     @IBAction func authenticateUser(_ sender: Any) {
         let usrName = userName.text
         let usuarios = usersList
@@ -98,7 +100,6 @@ class ViewController: UIViewController {
             let pw = users.contraseña
 
             if self.userName.text == usr && self.passwordField.text == pw {
-                UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
                 isLoginExitoso = true
                 break
             }
@@ -109,7 +110,7 @@ class ViewController: UIViewController {
             self.navigationController?.pushViewController(Home, animated: true)
         } else {
             self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu usuario y contraseña")
-        } ////
+        }
         
         if self.userName.text == "" || self.passwordField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)
@@ -121,6 +122,8 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    // *** Autenticación con Firebase ***
     
     /*@IBAction func authenticateUser(_ sender: Any) {
         let usrName = userName.text
