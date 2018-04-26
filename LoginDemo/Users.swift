@@ -10,13 +10,6 @@ import Foundation
 import RealmSwift
 
 class Users: Object {
-    
-    convenience init(usuario: String, contraseña: String){
-        self.init()
-        self.usuario = usuario
-        self.contraseña = contraseña
-    }
-    
     @objc dynamic var usuario = ""
     @objc dynamic var contraseña = ""
 }
