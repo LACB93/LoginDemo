@@ -232,6 +232,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="😀"/>
                                 <connections>
+                                    <action selector="EmojiPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="B0h-8d-roM"/>
                                     <action selector="HappyBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="z3L-cM-y06"/>
                                 </connections>
                             </button>
@@ -240,6 +241,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="😍"/>
                                 <connections>
+                                    <action selector="EmojiPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="4WA-VO-56I"/>
                                     <action selector="LoveBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="or1-aU-K29"/>
                                 </connections>
                             </button>
@@ -249,6 +251,7 @@
                                 <state key="normal" title="😤"/>
                                 <connections>
                                     <action selector="AngryBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="ywG-gP-jWh"/>
+                                    <action selector="EmojiPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="Vgp-dg-ACF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-0z-t6U">
@@ -258,6 +261,7 @@
                                 <state key="normal" title="🤪"/>
                                 <connections>
                                     <action selector="CrazyBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="mNZ-fm-8wo"/>
+                                    <action selector="EmojiPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="aQ0-87-tCj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaX-P8-BBI">

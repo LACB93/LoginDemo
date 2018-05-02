@@ -10,6 +10,17 @@ import UIKit
 import SwiftKeychainWrapper
 import RealmSwift
 
+enum Opiniones: String {
+    case enojado = "😡"
+    case loco = "🤪"
+    case feliz = "😀"
+    case enamorado = "😍"
+    case sinSeleccionar = "?"
+    
+}
+
+//var opinion: Opiniones = .sinSeleccionar
+
 class HomeController: UIViewController{
 
     @IBOutlet weak var opinion: UITextField!
@@ -26,11 +37,14 @@ class HomeController: UIViewController{
     @IBOutlet weak var pumas: UIButton!
     @IBOutlet weak var america: UIButton!
     
+
+    
     let realm = try! Realm()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
 
+        super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
      
@@ -126,12 +140,32 @@ class HomeController: UIViewController{
         loco.isSelected = false
     }
     
+   
+    var opinionn: Opiniones = .sinSeleccionar
+    
+    @IBAction func EmojiPressed(_ sender: UIButton) {
+       
+
+        switch sender {
+        case feliz: opinionn = .feliz
+        case enamorado: opinionn = .enamorado
+        case enojado: opinionn = .enojado
+        case loco: opinionn = .loco
+        default: break
+        }
+    }
+    
+    
     @IBAction func save(_ sender: UIButton) {
         
         guard let answer1 = opinion.text else {return}
         guard let answer2 = chivas.titleLabel?.text else {return}
 //        guard let answer2 = favoriteTeam.text else {return}
-        guard let answer3 = feliz.titleLabel?.text else {return}
+//        guard let answer3 = feliz.titleLabel?.text else {return}
+        
+        if opinionn == .sinSeleccionar { return }
+        let answer3 = opinionn.rawValue
+        
         guard let answer4 = age.text else {return}
         guard let answer5 = position.text else {return}
         
@@ -146,11 +180,9 @@ class HomeController: UIViewController{
         try! self.realm.write {
             self.realm.add(newAnswer)
         }
-        
         print(newAnswer)
         print("--- Datos Guardados ---")
         let Last = self.storyboard?.instantiateViewController(withIdentifier: "LastViewController") as! LastViewController
         self.navigationController?.pushViewController(Last, animated: true)
     }
-    
 }
