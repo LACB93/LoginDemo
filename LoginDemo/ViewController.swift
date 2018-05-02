@@ -125,23 +125,8 @@ class ViewController: UIViewController {
     
     // *** Autenticación con Firebase ***
     
-    /*@IBAction func authenticateUser(_ sender: Any) {
-        let usrName = userName.text
-        let usuarios = usersList
-        for users in usuarios! {
-            let usr = users.usuario
-            let pw = users.contraseña
-     
-            if self.userName.text == usr && self.passwordField.text == pw {
-                UserDefaults.standard.set(true, forKey: "USUARIOREGISTRADO")
-                let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
-               self.navigationController?.pushViewController(Home, animated: true)
-                print("--- Inicio de sesión de \(usrName!) ---")
-            } else {
-                self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu usuario y contraseña")
-            }
-            
-        }*/
+//    @IBAction func authenticateUser(_ sender: Any) {
+//        let usrName = userName.text
         
 //        if self.userName.text == "" || self.passwordField.text == "" {
 //            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)

@@ -231,42 +231,74 @@
                                 <rect key="frame" x="34" y="287" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="😀"/>
+                                <connections>
+                                    <action selector="HappyBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="z3L-cM-y06"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POA-gO-AsZ">
                                 <rect key="frame" x="135" y="287" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="😍"/>
+                                <connections>
+                                    <action selector="LoveBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="or1-aU-K29"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oP5-na-eEK">
                                 <rect key="frame" x="233" y="287" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="😤"/>
+                                <connections>
+                                    <action selector="AngryBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="ywG-gP-jWh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-0z-t6U">
                                 <rect key="frame" x="325" y="287" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="🤪"/>
+                                <connections>
+                                    <action selector="CrazyBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="mNZ-fm-8wo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaX-P8-BBI">
                                 <rect key="frame" x="16" y="211" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Chivas"/>
+                                <connections>
+                                    <action selector="ChivasBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="Xx1-c5-Ekx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdH-vT-66f">
                                 <rect key="frame" x="217" y="211" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Pumas"/>
+                                <connections>
+                                    <action selector="PumasBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="uv3-YL-vUi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQG-rS-HZf">
                                 <rect key="frame" x="308" y="211" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="América"/>
+                                <connections>
+                                    <action selector="AmericaBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="aXA-9K-0Vv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73b-GI-5Cz">
                                 <rect key="frame" x="117" y="211" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cruz Azul"/>
+                                <connections>
+                                    <action selector="AzulBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="KVV-eG-E1K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knv-F9-EPy">
+                                <rect key="frame" x="14" y="532" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Limpiar"/>
+                                <connections>
+                                    <action selector="clean:" destination="TlB-ia-f3U" eventType="touchUpInside" id="Pet-te-9xj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.52156862745098043" green="0.75686274509803919" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
