@@ -39,27 +39,94 @@ class HomeController: UIViewController{
         self.navigationController?.popToRootViewController(animated: true )
         print("--- Sesión cerrada ---")
     }
+
+    @IBAction func ChivasBtn(_ sender: UIButton) {
+        sender.setTitleColor(UIColor.white, for: .selected)
+        chivas.isSelected = true
+        azul.isEnabled = false
+        pumas.isEnabled = false
+        america.isEnabled = false
+    }
     
-    func buttonSelectedNot(){
+    @IBAction func AzulBtn(_ sender: UIButton) {
+        sender.setTitleColor(UIColor.white, for: .selected)
+        azul.isSelected = true
+        chivas.isEnabled = false
+        pumas.isEnabled = false
+        america.isEnabled = false
+    }
+    
+    @IBAction func PumasBtn(_ sender: UIButton) {
+        sender.setTitleColor(UIColor.white, for: .selected)
+        pumas.isSelected = true
+        chivas.isEnabled = false
+        azul.isEnabled = false
+        america.isEnabled = false
+    }
+    
+    @IBAction func AmericaBtn(_ sender: UIButton) {
+        sender.setTitleColor(UIColor.white, for: .selected)
+        america.isSelected = true
+        chivas.isEnabled = false
+        azul.isEnabled = false
+        pumas.isEnabled = false
+    }
+    
+    @IBAction func HappyBtn(_ sender: UIButton) {
+        sender.setTitleColor(UIColor.white, for: .selected)
+        feliz.isSelected = true
+        enamorado.isEnabled = false
+        enojado.isEnabled = false
+        loco.isEnabled = false
+    }
+    
+    @IBAction func LoveBtn(_ sender: UIButton) {
+        sender.setTitleColor(UIColor.white, for: .selected)
+        enamorado.isSelected = true
+        feliz.isEnabled = false
+        enojado.isEnabled = false
+        loco.isEnabled = false
+    }
+    
+    @IBAction func AngryBtn(_ sender: UIButton) {
+        sender.setTitleColor(UIColor.white, for: .selected)
+        enojado.isSelected = true
+        feliz.isEnabled = false
+        enamorado.isEnabled = false
+        loco.isEnabled = false
+    }
+    
+    @IBAction func CrazyBtn(_ sender: UIButton) {
+        sender.setTitleColor(UIColor.white, for: .selected)
+        loco.isSelected = true
+        feliz.isEnabled = false
+        enamorado.isEnabled = false
+        enojado.isEnabled = false
+    }
+    
+    @IBAction func clean(_ sender: UIButton) {
+        opinion.text = ""
+        chivas.isEnabled = true
+        azul.isEnabled = true
+        pumas.isEnabled = true
+        america.isEnabled = true
+        age.text = ""
+        position.text = ""
+        chivas.isSelected = false
+        azul.isSelected = false
+        pumas.isSelected = false
+        america.isSelected = false
+        feliz.isEnabled = true
+        enamorado.isEnabled = true
+        enojado.isEnabled = true
+        loco.isEnabled = true
         feliz.isSelected = false
         enamorado.isSelected = false
         enojado.isSelected = false
         loco.isSelected = false
     }
-
+    
     @IBAction func save(_ sender: UIButton) {
-        buttonSelectedNot()
-
-        sender.isSelected = !sender.isSelected
-        if(sender.isSelected){
-            sender.isSelected = true
-            let emojiString = (sender.titleLabel?.text)!
-            sender.setTitleColor(UIColor.black, for: .selected)
-            print(emojiString)
-        }else {
-            print("No seleccionado")
-        }
-         sender.isSelected = true
         
         guard let answer1 = opinion.text else {return}
         guard let answer2 = chivas.titleLabel?.text else {return}
