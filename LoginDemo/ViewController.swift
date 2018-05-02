@@ -177,6 +177,10 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func returntest (segue: UIStoryboardSegue!){
+        print("---Sesión cerrada---")
+    }
 }
 
 

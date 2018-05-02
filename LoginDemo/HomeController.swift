@@ -85,4 +85,5 @@ class HomeController: UIViewController{
         let Last = self.storyboard?.instantiateViewController(withIdentifier: "LastViewController") as! LastViewController
         self.navigationController?.pushViewController(Last, animated: true)
     }
+    
 }
