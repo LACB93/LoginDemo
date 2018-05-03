@@ -248,7 +248,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oP5-na-eEK">
                                 <rect key="frame" x="233" y="287" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="😤"/>
+                                <state key="normal" title="😡"/>
                                 <connections>
                                     <action selector="AngryBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="ywG-gP-jWh"/>
                                     <action selector="EmojiPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="Vgp-dg-ACF"/>
