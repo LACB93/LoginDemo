@@ -15,17 +15,21 @@ enum Opiniones: String {
     case loco = "🤪"
     case feliz = "😀"
     case enamorado = "😍"
-    case sinSeleccionar = "?"
+    case sinSeleccionar = "No seleccionado"
     
 }
 
-//var opinion: Opiniones = .sinSeleccionar
+enum Teams: String {
+    case chivas = "Chivas"
+    case azul = "Cruz Azul"
+    case pumas = "Pumas"
+    case america = "America"
+    case sinSeleccionar = "No seleccionado"
+}
 
 class HomeController: UIViewController{
 
     @IBOutlet weak var opinion: UITextField!
-//    @IBOutlet weak var favoriteTeam: UITextField!
-//    @IBOutlet weak var favoritePlayer: UITextField!
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var position: UITextField!
     @IBOutlet weak var feliz: UIButton!
@@ -155,14 +159,25 @@ class HomeController: UIViewController{
         }
     }
     
+    var selectTeam: Teams = .sinSeleccionar
+    
+    @IBAction func TeamsPressed(_ sender: UIButton) {
+        switch sender {
+        case chivas: selectTeam = .chivas
+        case azul: selectTeam = .azul
+        case pumas: selectTeam = .pumas
+        case america: selectTeam = .america
+        default: break
+        }
+    }
+    
+    
     
     @IBAction func save(_ sender: UIButton) {
         
         guard let answer1 = opinion.text else {return}
-        guard let answer2 = chivas.titleLabel?.text else {return}
-//        guard let answer2 = favoriteTeam.text else {return}
-//        guard let answer3 = feliz.titleLabel?.text else {return}
-        
+        if selectTeam == .sinSeleccionar {return}
+        let answer2 = selectTeam.rawValue
         if opinionn == .sinSeleccionar { return }
         let answer3 = opinionn.rawValue
         
