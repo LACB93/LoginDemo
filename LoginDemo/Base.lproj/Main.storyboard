@@ -231,42 +231,82 @@
                                 <rect key="frame" x="34" y="287" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="😀"/>
+                                <connections>
+                                    <action selector="EmojiPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="B0h-8d-roM"/>
+                                    <action selector="HappyBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="z3L-cM-y06"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POA-gO-AsZ">
                                 <rect key="frame" x="135" y="287" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="😍"/>
+                                <connections>
+                                    <action selector="EmojiPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="4WA-VO-56I"/>
+                                    <action selector="LoveBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="or1-aU-K29"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oP5-na-eEK">
                                 <rect key="frame" x="233" y="287" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="😤"/>
+                                <state key="normal" title="😡"/>
+                                <connections>
+                                    <action selector="AngryBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="ywG-gP-jWh"/>
+                                    <action selector="EmojiPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="Vgp-dg-ACF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-0z-t6U">
                                 <rect key="frame" x="325" y="287" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="🤪"/>
+                                <connections>
+                                    <action selector="CrazyBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="mNZ-fm-8wo"/>
+                                    <action selector="EmojiPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="aQ0-87-tCj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaX-P8-BBI">
                                 <rect key="frame" x="16" y="211" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Chivas"/>
+                                <connections>
+                                    <action selector="ChivasBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="Xx1-c5-Ekx"/>
+                                    <action selector="TeamsPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="bME-Tg-xRW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdH-vT-66f">
                                 <rect key="frame" x="217" y="211" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Pumas"/>
+                                <connections>
+                                    <action selector="PumasBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="uv3-YL-vUi"/>
+                                    <action selector="TeamsPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="JYG-wF-xR3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQG-rS-HZf">
                                 <rect key="frame" x="308" y="211" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="América"/>
+                                <connections>
+                                    <action selector="AmericaBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="aXA-9K-0Vv"/>
+                                    <action selector="TeamsPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="VN4-kE-EgB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73b-GI-5Cz">
                                 <rect key="frame" x="117" y="211" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cruz Azul"/>
+                                <connections>
+                                    <action selector="AzulBtn:" destination="TlB-ia-f3U" eventType="touchUpInside" id="KVV-eG-E1K"/>
+                                    <action selector="TeamsPressed:" destination="TlB-ia-f3U" eventType="touchUpInside" id="qnZ-i7-Irb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knv-F9-EPy">
+                                <rect key="frame" x="14" y="532" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Limpiar"/>
+                                <connections>
+                                    <action selector="clean:" destination="TlB-ia-f3U" eventType="touchUpInside" id="Pet-te-9xj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.52156862745098043" green="0.75686274509803919" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -304,10 +344,20 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kT-mo-IIx">
+                                <rect key="frame" x="141" y="270" width="94" height="30"/>
+                                <state key="normal" title="Cerrar Sesión"/>
+                                <connections>
+                                    <segue destination="j5m-2c-Je2" kind="unwind" unwindAction="returntestWithSegue:" id="9nt-Ib-gw2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.52156862745098043" green="0.75686274509803919" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6kT-mo-IIx" firstAttribute="centerX" secondItem="wOQ-0d-36h" secondAttribute="centerX" id="5kK-BT-jrh"/>
+                            <constraint firstItem="6kT-mo-IIx" firstAttribute="top" secondItem="eth-Le-jZJ" secondAttribute="bottom" constant="150" id="5kV-Wq-n6i"/>
                             <constraint firstItem="Oih-8m-kCG" firstAttribute="trailing" secondItem="eth-Le-jZJ" secondAttribute="trailing" constant="21" id="QPD-0X-yW8"/>
+                            <constraint firstItem="6kT-mo-IIx" firstAttribute="top" secondItem="eth-Le-jZJ" secondAttribute="bottom" constant="150" id="ier-Zv-cip"/>
                             <constraint firstItem="eth-Le-jZJ" firstAttribute="top" secondItem="Oih-8m-kCG" secondAttribute="top" constant="72" id="ukO-hV-wKc"/>
                             <constraint firstItem="eth-Le-jZJ" firstAttribute="leading" secondItem="Oih-8m-kCG" secondAttribute="leading" constant="23" id="yXI-yQ-wcC"/>
                         </constraints>
@@ -315,6 +365,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wh5-dq-QYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="j5m-2c-Je2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1439" y="116"/>
         </scene>
