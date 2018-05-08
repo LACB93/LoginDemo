@@ -113,7 +113,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilB-6L-NcO">
-                                <rect key="frame" x="111" y="443" width="153" height="30"/>
+                                <rect key="frame" x="130" y="441" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cambiar idioma"/>
                                 <connections>
@@ -147,12 +147,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="68I-Se-IDG"/>
                     <connections>
-                        <outlet property="addNewUser" destination="COu-Bu-X5h" id="q8j-Ou-pdg"/>
+                        <outlet property="addNewUser" destination="COu-Bu-X5h" id="h3v-4L-uJh"/>
                         <outlet property="changeButton" destination="ilB-6L-NcO" id="WNN-fS-hLU"/>
-                        <outlet property="enterButton" destination="i6V-TK-YLp" id="lDS-aj-W2I"/>
+                        <outlet property="enterButton" destination="i6V-TK-YLp" id="FNq-H4-NPq"/>
                         <outlet property="passwordField" destination="eRj-XW-vz4" id="LWk-5P-e9b"/>
-                        <outlet property="rememberPw" destination="n0q-Es-L1f" id="ZI1-73-OK3"/>
-                        <outlet property="switchLanguage" destination="ilB-6L-NcO" id="XFO-bj-eEp"/>
+                        <outlet property="rememberPw" destination="n0q-Es-L1f" id="Rsk-G3-bjo"/>
+                        <outlet property="switchLanguage" destination="ilB-6L-NcO" id="Eqn-2S-CoB"/>
                         <outlet property="userName" destination="xVY-6e-jSN" id="fhF-RL-yNV"/>
                     </connections>
                 </viewController>
@@ -330,21 +330,13 @@
                         <outlet property="america" destination="CQG-rS-HZf" id="pZX-M4-gxB"/>
                         <outlet property="azul" destination="73b-GI-5Cz" id="clc-aW-gXO"/>
                         <outlet property="chivas" destination="kaX-P8-BBI" id="c8C-YA-ERb"/>
-                        <outlet property="cleanBtn" destination="knv-F9-EPy" id="zYF-69-UlC"/>
                         <outlet property="enamorado" destination="POA-gO-AsZ" id="tCx-Rj-n6a"/>
                         <outlet property="enojado" destination="oP5-na-eEK" id="y5l-xO-tmG"/>
                         <outlet property="feliz" destination="rRi-Pb-q5k" id="UO5-UR-a23"/>
                         <outlet property="loco" destination="UYu-0z-t6U" id="zw8-lN-8li"/>
-                        <outlet property="logout" destination="uq0-b4-UqW" id="q6q-oP-eZq"/>
                         <outlet property="opinion" destination="86t-HQ-6Pb" id="u4D-IP-eil"/>
                         <outlet property="position" destination="Xfm-7s-dt3" id="4jY-hw-iB4"/>
                         <outlet property="pumas" destination="fdH-vT-66f" id="qax-Zx-MN3"/>
-                        <outlet property="question1" destination="8rO-aO-qdS" id="VmW-TK-cXA"/>
-                        <outlet property="question2" destination="r2H-Vm-epf" id="1BG-F5-yT5"/>
-                        <outlet property="question3" destination="htM-bQ-b7m" id="soO-QP-h7J"/>
-                        <outlet property="question4" destination="Jfr-Wm-sFV" id="IOp-fr-hOg"/>
-                        <outlet property="question5" destination="77m-f4-OJt" id="W4a-JM-cOh"/>
-                        <outlet property="saveBtn" destination="aRU-aR-AUd" id="YJb-cV-rHO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9j-L4-bG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,13 +352,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por contestar la encuesta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eth-Le-jZJ">
-                                <rect key="frame" x="23" y="92" width="331" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <rect key="frame" x="23" y="92" width="331" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kT-mo-IIx">
-                                <rect key="frame" x="141" y="265" width="94" height="30"/>
+                                <rect key="frame" x="141" y="270" width="94" height="30"/>
                                 <state key="normal" title="Cerrar Sesión"/>
                                 <connections>
                                     <segue destination="j5m-2c-Je2" kind="unwind" unwindAction="returntestWithSegue:" id="9nt-Ib-gw2"/>
@@ -384,10 +376,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oih-8m-kCG"/>
                     </view>
-                    <connections>
-                        <outlet property="singOff" destination="6kT-mo-IIx" id="Mqo-fs-kne"/>
-                        <outlet property="surverLabel" destination="eth-Le-jZJ" id="BBO-jl-MSg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wh5-dq-QYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="j5m-2c-Je2" userLabel="Exit" sceneMemberID="exit"/>

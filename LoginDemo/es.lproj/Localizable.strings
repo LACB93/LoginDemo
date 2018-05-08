@@ -5,30 +5,48 @@
   Created by Gonet on 07/05/18.
   Copyright © 2018 Gonet. All rights reserved.
 */
-TRY_AGAIN = "Intentar otra vez";
+"Intentar otra vez" = "Intentar otra vez";
 
-NEW_USER = "Nuevo Usuario";
+"Nuevo Usuario" = "Nuevo Usuario";
 
-ENTER_NEW_USER = "Ingrese nuevo usuario";
+"Ingrese nuevo usuario" = "Ingrese nuevo usuario";
 
-USER = "Usuario";
+"Usuario" = "Usuario";
 
-PASSWORD = "Contraseña";
+"Contraseña" = "Contraseña";
 
-SAVE = "Guardar";
+"Guardar" = "Guardar";
 
-CANCEL = "Cancelar";
+"Cancelar" = "Cancelar";
 
-REGISTERED_USER = "--- Nuevo usuario registrado --- ";
+"--- Nuevo usuario registrado --- " = "--- Nuevo usuario registrado --- ";
 
-INVALID_CREDENTIALS = "Credenciales inválidas";
+"Credenciales inválidas" = "Credenciales inválidas";
 
-ENTER_CREDENTIALS_AGAIN = "Ingresa nuevamente tu usuario y contraseña";
+"Ingresa nuevamente tu usuario y contraseña" = "Ingresa nuevamente tu usuario y contraseña";
 
-ENTER_EMAIL_PW = "Por favor introduce email y contraseña";
+"Por favor introduce email y contraseña" = "Por favor introduce email y contraseña";
 
-CLOSED_SESSION = "--- Sesión cerrada ---";
+"--- Sesión cerrada ---" = "--- Sesión cerrada ---";
 
-FILL_SELECT = "Por favor llena o selecciona todas las opciones";
+"Por favor llena o selecciona todas las opciones" = "Por favor llena o selecciona todas las opciones";
 
-SAVED_DATA = "--- Datos guardados ---";
+"--- Datos guardados ---" = "--- Datos guardados ---";
+
+"Cambiar idioma" = "Cambiar idioma";
+
+"--- Inicio de sesión de \(usrName!) ---" = "--- Inicio de sesión de \(usrName!) ---";
+
+"Recordar Contraseña" = "Recordar Contraseña";
+
+"¿Cuál es tu opinion sobre el fútbol?" = "¿Cuál es tu opinion sobre el fútbol?";
+
+"¿Cuál es tu equipo favorito?" = "¿Cuál es tu equipo favorito?";
+
+"¿Cómo te sientes jugando futbol?" = "¿Cómo te sientes jugando futbol?";
+
+"¿Cuántos años tienes?" = "¿Cuántos años tienes?";
+
+"¿Que posición juegas?" = "¿Que posición juegas?";
+
+"Gracias por contestar la encuesta" = "Gracias por contestar la encuesta";

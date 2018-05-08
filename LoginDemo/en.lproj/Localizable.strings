@@ -6,30 +6,48 @@
   Copyright © 2018 Gonet. All rights reserved.
 */
 
-TRY_AGAIN = "Try again";
+"Intentar otra vez" = "Try again";
 
-NEW_USER = "New User";
+"Nuevo Usuario" = "New User";
 
-ENTER_NEW_USER = "Enter new user";
+"Ingrese nuevo usuario" = "Enter new user";
 
-USER = "User";
+"Usuario" = "User";
 
-PASSWORD = "Password";
+"Contraseña" = "Password";
 
-SAVE = "Save";
+"Guardar" = "Save";
 
-CANCEL = "Cancel";
+"Cancelar" = "Cancel";
 
-REGISTERED_USER = "--- New registered user ---";
+"--- Nuevo usuario registrado --- " = "--- New registered user ---";
 
-INVALID_CREDENTIALS = "Invalid credentials";
+"Credenciales inválidas" = "Invalid credentials";
 
-ENTER_CREDENTIALS_AGAIN = "Enter your username and password again";
+"Ingresa nuevamente tu usuario y contraseña" = "Enter your username and password again";
 
-ENTER_EMAIL_PW = "Please enter email and password";
+"Por favor introduce email y contraseña" = "Please enter email and password";
 
-CLOSED_SESSION = "--- Closed session ---";
+"--- Sesión cerrada ---" = "--- Closed session ---";
 
-FILL_SELECT = "Please fill out or select all the options";
+"Por favor llena o selecciona todas las opciones" = "Please fill out or select all the options";
 
-SAVED_DATA = "--- Saved data ---";
+"--- Datos guardados ---" = "--- Saved data ---";
+
+"Cambiar idioma" = "Switch language";
+
+"--- Inicio de sesión de \(usrName!) ---" = "--- Welcome \(usrName!) ---";
+
+"Recordar Contraseña" = "Remember Password";
+
+"¿Cuál es tu opinion sobre el fútbol?" = "What do you think about soccer?";
+
+"¿Cuál es tu equipo favorito?" = "What is your favorite team?";
+
+"¿Cómo te sientes jugando futbol?" = "How do you feel playing soccer?";
+
+"¿Cuántos años tienes?" = "How old are you?";
+
+"¿Que posición juegas?" = "What position do you play?";
+
+"Gracias por contestar la encuesta" = "Thank you for answering the survey";
