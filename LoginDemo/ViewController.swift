@@ -11,15 +11,21 @@ import Firebase
 import FirebaseAuth
 import RealmSwift
 import SwiftKeychainWrapper
+import Localize_Swift
 
 class ViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!    
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var changeButton: UIButton!
+    var actionSheet: UIAlertController!
+    
+    let availableLanguages = Localize.availableLanguages()
     
     let realm = try! Realm()
     var usersList : Results<Users>!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setText()
         usersList = realm.objects(Users.self)
         print(usersList)
         if UserDefaults.standard.bool(forKey: "USUARIOREGISTRADO") == true {
@@ -34,11 +40,22 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
+    }
+    
+    // Remove the LCLLanguageChangeNotification on viewWillDisappear
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
 
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let retry = UIAlertAction(title: "Intentar otra vez", style: .default) { (action) in
+        let retry = UIAlertAction(title: NSLocalizedString("TRY_AGAIN", comment: "Intentar otra vez"), style: .default) { (action) in
             self.userName.text = ""
             self.passwordField.text = ""
             self.userName.becomeFirstResponder()
@@ -49,17 +66,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addUser(_ sender: Any) {
-        let alerta = UIAlertController(title: "Nuevo Usuario", message: "Ingrese el nuevo usuario", preferredStyle: .alert)
+        let alerta = UIAlertController(title: NSLocalizedString("NEW_USER", comment: "Nuevo usuario"), message: NSLocalizedString("ENTER_NEW_USER", comment: "Ingrese nuevo usuario"), preferredStyle: .alert)
         alerta.addTextField{ (usuario) in
-            usuario.placeholder = "Usuario"
+            usuario.placeholder = NSLocalizedString("USER", comment: "Usuario")
         }
         
         alerta.addTextField{ (contraseña) in
-            contraseña.placeholder = "Contraseña"
+            contraseña.placeholder = NSLocalizedString("PASSWORD", comment: "Contraseña")
             contraseña.isSecureTextEntry = true
         }
         
-        let save = UIAlertAction(title: "Guardar", style: .default) { (action) in
+        let save = UIAlertAction(title: NSLocalizedString("SAVE", comment: "Guardar"), style: .default) { (action) in
             guard let usuario = alerta.textFields?.first?.text else {return}
             guard let contraseña = alerta.textFields?[1].text else {return}
             
@@ -71,11 +88,11 @@ class ViewController: UIViewController {
                 self.realm.add(newUser )
             }
             
-            print("Nuevo usuario Registrado")
+            print(NSLocalizedString("REGISTERED_USER", comment: "Nuevo usuario registrado"))
             
         }
         
-        let cancel = UIAlertAction(title: "Cancelar", style: .destructive, handler: nil)
+        let cancel = UIAlertAction(title: NSLocalizedString("CANCEL", comment: "Cancelar"), style: .destructive, handler: nil)
         
         alerta.addAction(save)
         alerta.addAction(cancel)
@@ -86,6 +103,29 @@ class ViewController: UIViewController {
         try! realm.write({
             realm.deleteAll()
         })
+    }
+    
+    @objc func setText(){
+        changeButton.setTitle("Change".localized(using: "Localizable"), for: UIControlState.normal)
+//        changeButton.setTitle("Change".localized(using: "Main"), for: UIControlState.normal)
+    }
+    
+    
+    @IBAction func doChangeLanguage(_ sender: UIButton) {
+        actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.actionSheet)
+        for language in availableLanguages {
+            let displayName = Localize.displayNameForLanguage(language)
+            let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
+                (alert: UIAlertAction!) -> Void in
+                Localize.setCurrentLanguage(language)
+            })
+            actionSheet.addAction(languageAction)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        actionSheet.addAction(cancelAction)
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     // *** Autenticación con Realm ***
@@ -109,11 +149,11 @@ class ViewController: UIViewController {
             let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
             self.navigationController?.pushViewController(Home, animated: true)
         } else {
-            self.showAlert(title: "Credenciales Invalidas", message: "Ingresa nuevamente tu usuario y contraseña")
+            self.showAlert(title: NSLocalizedString("INVALID_CREDENTIALS", comment: "Credenciales inválidas"), message: NSLocalizedString("ENTER_CREDENTIALS_AGAIN", comment: "Ingresa nuevamente tu usuario y contraseña"))
         }
         
         if self.userName.text == "" || self.passwordField.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: NSLocalizedString("ENTER_EMAIL_PW", comment: "Por favor introduce email y contraseña"), preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
@@ -157,14 +197,13 @@ class ViewController: UIViewController {
             if let user = userName.text, let password = passwordField.text{
                 let _: Bool = KeychainWrapper.standard.set(user, forKey: "userUser")
                 let _: Bool = KeychainWrapper.standard.set(password, forKey: "userPassword")
-                print("--- Credenciales guardadas ---")
                 self.view.endEditing(true)
             }
         }
     }
     
     @IBAction func returntest (segue: UIStoryboardSegue!){
-        print("---Sesión cerrada---")
+        print(NSLocalizedString("CLOSED_SESSION", comment: "Sesión cerrada"))
     }
 }
 
