@@ -17,6 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!    
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var changeButton: UIButton!
+    @IBOutlet weak var rememberPw: UILabel!
+    @IBOutlet weak var switchLanguage: UIButton!
+    @IBOutlet weak var addNewUser: UIButton!
+    @IBOutlet weak var enterButton: UIButton!
+    
     var actionSheet: UIAlertController!
     
     let availableLanguages = Localize.availableLanguages()
@@ -55,7 +60,7 @@ class ViewController: UIViewController {
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let retry = UIAlertAction(title: NSLocalizedString("TRY_AGAIN", comment: "Intentar otra vez"), style: .default) { (action) in
+        let retry = UIAlertAction(title: "Intentar otra vez".localized(), style: .default) { (action) in
             self.userName.text = ""
             self.passwordField.text = ""
             self.userName.becomeFirstResponder()
@@ -66,17 +71,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addUser(_ sender: Any) {
-        let alerta = UIAlertController(title: NSLocalizedString("NEW_USER", comment: "Nuevo usuario"), message: NSLocalizedString("ENTER_NEW_USER", comment: "Ingrese nuevo usuario"), preferredStyle: .alert)
+        let alerta = UIAlertController(title: "Nuevo Usuario".localized(), message: "Ingrese nuevo usuario".localized(), preferredStyle: .alert)
         alerta.addTextField{ (usuario) in
-            usuario.placeholder = NSLocalizedString("USER", comment: "Usuario")
+            usuario.placeholder = "Usuario".localized()
         }
         
         alerta.addTextField{ (contraseña) in
-            contraseña.placeholder = NSLocalizedString("PASSWORD", comment: "Contraseña")
+            contraseña.placeholder = "Contraseña".localized()
             contraseña.isSecureTextEntry = true
         }
         
-        let save = UIAlertAction(title: NSLocalizedString("SAVE", comment: "Guardar"), style: .default) { (action) in
+        let save = UIAlertAction(title: "Guardar".localized(), style: .default) { (action) in
             guard let usuario = alerta.textFields?.first?.text else {return}
             guard let contraseña = alerta.textFields?[1].text else {return}
             
@@ -88,11 +93,11 @@ class ViewController: UIViewController {
                 self.realm.add(newUser )
             }
             
-            print(NSLocalizedString("REGISTERED_USER", comment: "Nuevo usuario registrado"))
+            print("--- Nuevo usuario registrado --- ".localized())
             
         }
         
-        let cancel = UIAlertAction(title: NSLocalizedString("CANCEL", comment: "Cancelar"), style: .destructive, handler: nil)
+        let cancel = UIAlertAction(title: "Cancelar".localized(), style: .destructive, handler: nil)
         
         alerta.addAction(save)
         alerta.addAction(cancel)
@@ -106,13 +111,15 @@ class ViewController: UIViewController {
     }
     
     @objc func setText(){
-        changeButton.setTitle("Change".localized(using: "Localizable"), for: UIControlState.normal)
-//        changeButton.setTitle("Change".localized(using: "Main"), for: UIControlState.normal)
+        rememberPw.text = "Recordar Contraseña".localized()
+        enterButton.setTitle("Entrar".localized(using: "ButtonsTitles"), for: UIControlState.normal)
+        addNewUser.setTitle("+ Usuario".localized(using: "ButtonsTitles"), for: UIControlState.normal)
+        switchLanguage.setTitle("Cambiar idioma".localized(using: "ButtonsTitles"), for: UIControlState.normal)
     }
     
     
     @IBAction func doChangeLanguage(_ sender: UIButton) {
-        actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.actionSheet)
+        actionSheet = UIAlertController(title: nil, message: "Cambiar idioma".localized(), preferredStyle: UIAlertControllerStyle.actionSheet)
         for language in availableLanguages {
             let displayName = Localize.displayNameForLanguage(language)
             let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
@@ -121,7 +128,7 @@ class ViewController: UIViewController {
             })
             actionSheet.addAction(languageAction)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
+        let cancelAction = UIAlertAction(title: "Cancelar".localized(), style: UIAlertActionStyle.cancel, handler: {
             (alert: UIAlertAction) -> Void in
         })
         actionSheet.addAction(cancelAction)
@@ -145,15 +152,15 @@ class ViewController: UIViewController {
             }
         }
         if isLoginExitoso {
-            print("--- Inicio de sesión de \(usrName!) ---")
+            print("--- Inicio de sesión de \(usrName!) ---".localized())
             let Home = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
             self.navigationController?.pushViewController(Home, animated: true)
         } else {
-            self.showAlert(title: NSLocalizedString("INVALID_CREDENTIALS", comment: "Credenciales inválidas"), message: NSLocalizedString("ENTER_CREDENTIALS_AGAIN", comment: "Ingresa nuevamente tu usuario y contraseña"))
+            self.showAlert(title: "Credenciales inválidas".localized(), message: "Ingresa nuevamente tu usuario y contraseña".localized())
         }
         
         if self.userName.text == "" || self.passwordField.text == "" {
-            let alertController = UIAlertController(title: "Error", message: NSLocalizedString("ENTER_EMAIL_PW", comment: "Por favor introduce email y contraseña"), preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña".localized(), preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
@@ -203,7 +210,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func returntest (segue: UIStoryboardSegue!){
-        print(NSLocalizedString("CLOSED_SESSION", comment: "Sesión cerrada"))
+        print("--- Sesión cerrada ---".localized())
     }
 }
 

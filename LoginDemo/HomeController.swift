@@ -9,6 +9,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import RealmSwift
+import Localize_Swift
 
 enum Emojis: String {
     case enojado = "😡"
@@ -40,21 +41,48 @@ class HomeController: UIViewController{
     @IBOutlet weak var azul: UIButton!
     @IBOutlet weak var pumas: UIButton!
     @IBOutlet weak var america: UIButton!
+    @IBOutlet weak var logout: UIButton?
+    @IBOutlet weak var cleanBtn: UIButton?
+    @IBOutlet weak var saveBtn: UIButton?
+    @IBOutlet weak var question1: UILabel?
+    @IBOutlet weak var question2: UILabel?
+    @IBOutlet weak var question3: UILabel?
+    @IBOutlet weak var question4: UILabel?
+    @IBOutlet weak var question5: UILabel?
     
-
     
     let realm = try! Realm()
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
-        
+        self.setText1()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText1), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
      
     @IBAction func logoutUser(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "USUARIOREGISTRADO")
         self.navigationController?.popToRootViewController(animated: true )
-        print(NSLocalizedString("CLOSED_SESSION", comment: "Sesión cerrada"))
+        print("--- Sesión cerrada ---".localized())
+    }
+    
+    @objc func setText1(){
+        question1?.text = "¿Cuál es tu opinion sobre el fútbol?".localized()
+        question2?.text = "¿Cuál es tu equipo favorito?".localized()
+        question3?.text = "¿Cómo te sientes jugando futbol?".localized()
+        question4?.text = "¿Cuántos años tienes?".localized()
+        question5?.text = "¿Que posición juegas?".localized()
+        logout?.setTitle("Cerrar Sesión".localized(using: "ButtonsTitles"), for: UIControlState.normal)
+        cleanBtn?.setTitle("Limpiar".localized(using: "ButtonsTitles"), for: UIControlState.normal)
+        saveBtn?.setTitle("Guardar".localized(using: "ButtonsTitles"), for: UIControlState.normal)
     }
 
     @IBAction func ChivasBtn(_ sender: UIButton) {
@@ -199,7 +227,7 @@ class HomeController: UIViewController{
     @IBAction func save(_ sender: UIButton) {
         
         if opinion.text == "" || age.text == "" || position.text == "" || selectTeam == .sinSeleccionar || selectEmoji == .sinSeleccionar {
-            let alertController = UIAlertController(title: "Error", message: NSLocalizedString("FILL_SELECT", comment: "Por favor llena o selecciona todas las opciones"), preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Por favor llena o selecciona todas las opciones".localized(), preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
@@ -228,7 +256,7 @@ class HomeController: UIViewController{
             self.realm.add(newAnswer)
     
         print(newAnswer)
-            print(NSLocalizedString("SAVED_DATA", comment: "Datos guardados"))
+            print("--- Datos guardados ---".localized())
         let Last = self.storyboard?.instantiateViewController(withIdentifier: "LastViewController") as! LastViewController
         self.navigationController?.pushViewController(Last, animated: true)
         }
