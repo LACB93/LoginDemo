@@ -1,0 +1,72 @@
+
+/* Class = "UIButton"; normalTitle = "Cerrar Sesión"; ObjectID = "6kT-mo-IIx"; */
+"6kT-mo-IIx.normalTitle" = "Cerrar Sesión";
+
+/* Class = "UIButton"; normalTitle = "Cruz Azul"; ObjectID = "73b-GI-5Cz"; */
+"73b-GI-5Cz.normalTitle" = "Cruz Azul";
+
+/* Class = "UILabel"; text = "¿Que posición juegas?"; ObjectID = "77m-f4-OJt"; */
+"77m-f4-OJt.text" = "¿Que posición juegas?";
+
+/* Class = "UILabel"; text = "¿Cuál es tu opinion sobre el fútbol?"; ObjectID = "8rO-aO-qdS"; */
+"8rO-aO-qdS.text" = "¿Cuál es tu opinion sobre el fútbol?";
+
+/* Class = "UIButton"; normalTitle = "+ Usuario"; ObjectID = "COu-Bu-X5h"; */
+"COu-Bu-X5h.normalTitle" = "+ Usuario";
+
+/* Class = "UIButton"; normalTitle = "América"; ObjectID = "CQG-rS-HZf"; */
+"CQG-rS-HZf.normalTitle" = "América";
+
+/* Class = "UILabel"; text = "¿Cuántos años tienes?"; ObjectID = "Jfr-Wm-sFV"; */
+"Jfr-Wm-sFV.text" = "¿Cuántos años tienes?";
+
+/* Class = "UIButton"; normalTitle = "😍"; ObjectID = "POA-gO-AsZ"; */
+"POA-gO-AsZ.normalTitle" = "😍";
+
+/* Class = "UIButton"; normalTitle = "🤪"; ObjectID = "UYu-0z-t6U"; */
+"UYu-0z-t6U.normalTitle" = "🤪";
+
+/* Class = "UIButton"; normalTitle = "Guardar"; ObjectID = "aRU-aR-AUd"; */
+"aRU-aR-AUd.normalTitle" = "Guardar";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "c3j-BG-hm4"; */
+"c3j-BG-hm4.text" = "Login";
+
+/* Class = "UITextField"; placeholder = "Contraseña"; ObjectID = "eRj-XW-vz4"; */
+"eRj-XW-vz4.placeholder" = "Contraseña";
+
+/* Class = "UILabel"; text = "Gracias por contestar la encuesta"; ObjectID = "eth-Le-jZJ"; */
+"eth-Le-jZJ.text" = "Gracias por contestar la encuesta";
+
+/* Class = "UIButton"; normalTitle = "Pumas"; ObjectID = "fdH-vT-66f"; */
+"fdH-vT-66f.normalTitle" = "Pumas";
+
+/* Class = "UILabel"; text = "¿Cómo te sientes jugando futbol?"; ObjectID = "htM-bQ-b7m"; */
+"htM-bQ-b7m.text" = "¿Cómo te sientes jugando futbol?";
+
+/* Class = "UIButton"; normalTitle = " Entrar"; ObjectID = "i6V-TK-YLp"; */
+"i6V-TK-YLp.normalTitle" = " Entrar";
+
+/* Class = "UIButton"; normalTitle = "Chivas"; ObjectID = "kaX-P8-BBI"; */
+"kaX-P8-BBI.normalTitle" = "Chivas";
+
+/* Class = "UIButton"; normalTitle = "Limpiar"; ObjectID = "knv-F9-EPy"; */
+"knv-F9-EPy.normalTitle" = "Limpiar";
+
+/* Class = "UILabel"; text = "Recordar Contraseña"; ObjectID = "n0q-Es-L1f"; */
+"n0q-Es-L1f.text" = "Recordar Contraseña";
+
+/* Class = "UIButton"; normalTitle = "😡"; ObjectID = "oP5-na-eEK"; */
+"oP5-na-eEK.normalTitle" = "😡";
+
+/* Class = "UILabel"; text = "¿Cuál es tu equipo favorito?"; ObjectID = "r2H-Vm-epf"; */
+"r2H-Vm-epf.text" = "¿Cuál es tu equipo favorito?";
+
+/* Class = "UIButton"; normalTitle = "😀"; ObjectID = "rRi-Pb-q5k"; */
+"rRi-Pb-q5k.normalTitle" = "😀";
+
+/* Class = "UIButton"; normalTitle = "Cerrar Sesión"; ObjectID = "uq0-b4-UqW"; */
+"uq0-b4-UqW.normalTitle" = "Cerrar Sesión";
+
+/* Class = "UITextField"; placeholder = "Usuario"; ObjectID = "xVY-6e-jSN"; */
+"xVY-6e-jSN.placeholder" = "Usuario";
