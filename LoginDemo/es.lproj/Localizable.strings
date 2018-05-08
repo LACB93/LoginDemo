@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  LoginDemo
+
+  Created by Gonet on 07/05/18.
+  Copyright © 2018 Gonet. All rights reserved.
+*/
+TRY_AGAIN = "Intentar otra vez";
+
+NEW_USER = "Nuevo Usuario";
+
+ENTER_NEW_USER = "Ingrese nuevo usuario";
+
+USER = "Usuario";
+
+PASSWORD = "Contraseña";
+
+SAVE = "Guardar";
+
+CANCEL = "Cancelar";
+
+REGISTERED_USER = "--- Nuevo usuario registrado --- ";
+
+INVALID_CREDENTIALS = "Credenciales inválidas";
+
+ENTER_CREDENTIALS_AGAIN = "Ingresa nuevamente tu usuario y contraseña";
+
+ENTER_EMAIL_PW = "Por favor introduce email y contraseña";
+
+CLOSED_SESSION = "--- Sesión cerrada ---";
+
+FILL_SELECT = "Por favor llena o selecciona todas las opciones";
+
+SAVED_DATA = "--- Datos guardados ---";

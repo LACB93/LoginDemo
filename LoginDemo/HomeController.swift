@@ -49,13 +49,12 @@ class HomeController: UIViewController{
 
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
      
     @IBAction func logoutUser(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "USUARIOREGISTRADO")
         self.navigationController?.popToRootViewController(animated: true )
-        print("--- Sesión cerrada ---")
+        print(NSLocalizedString("CLOSED_SESSION", comment: "Sesión cerrada"))
     }
 
     @IBAction func ChivasBtn(_ sender: UIButton) {
@@ -200,7 +199,7 @@ class HomeController: UIViewController{
     @IBAction func save(_ sender: UIButton) {
         
         if opinion.text == "" || age.text == "" || position.text == "" || selectTeam == .sinSeleccionar || selectEmoji == .sinSeleccionar {
-            let alertController = UIAlertController(title: "Error", message: "Por favor llena o selecciona todas las opciones", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: NSLocalizedString("FILL_SELECT", comment: "Por favor llena o selecciona todas las opciones"), preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
@@ -229,7 +228,7 @@ class HomeController: UIViewController{
             self.realm.add(newAnswer)
     
         print(newAnswer)
-        print("--- Datos Guardados ---")
+            print(NSLocalizedString("SAVED_DATA", comment: "Datos guardados"))
         let Last = self.storyboard?.instantiateViewController(withIdentifier: "LastViewController") as! LastViewController
         self.navigationController?.pushViewController(Last, animated: true)
         }

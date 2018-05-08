@@ -12,6 +12,9 @@ target 'LoginDemo' do
   pod 'RealmSwift'
   
   pod 'SwiftKeychainWrapper', '~> 3.0.1'
+  
+  source 'https://github.com/CocoaPods/Specs.git'
+  pod 'Localize-Swift', '~> 2.0'
 
 
   # Pods for LoginDemo
